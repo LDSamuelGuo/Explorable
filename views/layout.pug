@@ -1,0 +1,29 @@
+doctype html
+
+html
+    head
+        title= title
+        link(rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.1/css/bootstrap-grid.min.css')
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js')
+
+
+body
+  .container
+    .row
+      p 
+        | The total visit is: #{s3_count}
+      block searchbar 
+        form(id="search" action="/" method="post")
+            input(type="text", name="moviename", value="", placeholder="Search for a Movie Title")
+            br
+            input(type="submit" value="Submit")
+            link(rel='stylesheet', href='/stylesheets/homePage.css')
+
+    h3 #{title}
+
+    block flickr
+
+    block nav
+    link(rel='stylesheet', href='/stylesheets/loadingScreen.css')
+    
+    block content
